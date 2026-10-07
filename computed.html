@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Vue.js Pet Depot</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id = "app">
+            <p>Area is equal to: {{area}}</p>
+            <p>
+                <button v-on:click="length += 1">Add Length</button>
+                <button v-on:click="width += 1">Add Width</button>
+            </p>
+            
+        </div>
+        <script type = "text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    length: 5,
+                    width: 3
+                },
+                computed: {
+                    area: function() {
+                        return this.width * this.length;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
